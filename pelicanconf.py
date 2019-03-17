@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Craig Spargo'
 SITENAME = 'PrimerFender - GitHub Page'
-SITEURL = ''
-
+SITEURL = 'https://primerfender.github.io'
 PATH = 'content'
 
 TIMEZONE = 'America/Los_Angeles'
@@ -22,12 +21,12 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Jinja2', 'http://jinja.pocoo.org/'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('GitHub','https://github.com/PrimerFender'),
+          ('Twitter','https://www.twitter.com/cspargo'),
+          ('about.me','https://about.me/cspargo'))
 
 DEFAULT_PAGINATION = 5
 
