@@ -1,0 +1,46 @@
+version: 0.2
+
+env:
+  variables:
+  parameter-store:
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+      - apt-get update -y
+      - apt-get install -y pip3
+      - pip3 install pelican markdown
+    finally:
+      - echo This always runs even if the update or install command fails 
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+    finally:
+      - echo This always runs even if the login command fails 
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - pelican content -o . -s pelicanconf.py
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - git add .
+      - git commit -m "Auto-build"
+      - git push
+      - echo Build completed on `date`
+artifacts:
+  files:
+  discard-paths: yes
+  secondary-artifacts:
+    artifact1:
+      files:
+      discard-paths: yes
+    artifact2:
+      files:
+      discard-paths: yes
+cache:
+  paths:
